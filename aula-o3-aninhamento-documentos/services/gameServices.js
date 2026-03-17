@@ -12,13 +12,13 @@ class GameServices {
         }
     }
     // Método para cadastrar um game
-    async Create(title, platform, year, price){
+    async Create(title, year, price, descriptions){
         try {
             const newGames = new Game({
                 title,
-                platform,
                 year,
-                price
+                price,
+                descriptions
             })
 
             // Gravando no banco
@@ -41,13 +41,13 @@ class GameServices {
      }
 
     // Método para alterar o jogo
-    async Update(id, title, platform, year, price) {
+    async Update(id, title, year, price, descriptions) {
         try {
             const updateGame = await Game.findByIdAndUpdate(id, {
                 title,
-                platform,
                 year,
-                price   
+                price,
+                descriptions
             }, 
             { new : true }
         )
