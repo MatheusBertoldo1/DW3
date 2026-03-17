@@ -72,4 +72,4 @@ class GameServices {
     
 }
 
-export default new GameServices
+export default new GameServices()

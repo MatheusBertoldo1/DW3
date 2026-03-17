@@ -1,12 +1,20 @@
 import express from "express"
 import mongoose from "mongoose"
+
+// Importando rotas
 import gameRoutes from "./routes/gameRoutes.js"
+import userRoutes from "./routes/userRoutes.js"
+
+import User from "./models/Users.js"
 
 const app = express()
 
 // Configurações do app
 app.use(express.json()) // Permite uso de json nas operações
-app.use("/", gameRoutes)
+
+// Ativando a utilização rotas
+app.use("/", gameRoutes) // Games
+app.use("/", userRoutes) // Users
 
 // Iniciando a conexão com o banco de dados mongodb
 mongoose.connect("mongodb://127.0.0.1:27017/api-the-games-novo")
