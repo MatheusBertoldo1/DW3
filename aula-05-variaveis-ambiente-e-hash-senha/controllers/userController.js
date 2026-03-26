@@ -4,8 +4,15 @@ import UserServices from "../services/UserServices.js";
 // Importantdo o JWT - token (Json Web Token)
 import  jwt  from "jsonwebtoken";
 
+// Importando as variáveis de ambiente
+import dotenv from 'dotenv'
+
+// Configurando o dotenv
+dotenv.config()
+
 // Segredo para gerar token da API
-const JWTSecret = "segredo-secreto"
+const JWTSecret = process.env.JWTSECRET
+
 
 // Função para cadastrar um user
 const createUser = async (req, res) => {

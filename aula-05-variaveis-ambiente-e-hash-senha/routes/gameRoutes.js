@@ -7,7 +7,7 @@ const gameRoutes = express.Router()
 // Na camada de routes é armazenado os endpoints (URLs) da API
 
 // Endpoit para listar todos os games
-gameRoutes.get("/games", Auth.Authorization,gameController.getAllGames)
+gameRoutes.get("/games", Auth.Authorization, gameController.getAllGames)
 
 // Endpoint para cadastrar um game
 gameRoutes.post("/games", Auth.Authorization, gameController.createGames)
