@@ -7,10 +7,16 @@ import userRoutes from "./routes/userRoutes.js"
 
 import User from "./models/Users.js"
 
+// Importando o CORS
+import cors from 'cors'
+
 const app = express()
 
 // Configurações do app
 app.use(express.json()) // Permite uso de json nas operações
+
+// Configurando o CORS
+app.use(cors())
 
 // Ativando a utilização rotas
 app.use("/", gameRoutes) // Games
